@@ -1,55 +1,79 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheikh Rohan Mondol | Portfolio</title>
+  <title>SHIEAK ROHAN MONDOL LIKHON | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121a31;
-      --soft: #1c2645;
-      --text: #eaf0ff;
-      --muted: #b7c2e3;
-      --accent: #7aa2ff;
-      --accent-2: #9bffd0;
-      --card: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 20px 40px rgba(0,0,0,0.25);
+      --bg: #060b13;
+      --card: rgba(255,255,255,0.045);
+      --card-2: rgba(255,255,255,0.075);
+      --text: #f4f7ff;
+      --muted: #aab6cf;
+      --gold: #f5c842;
+      --teal: #00d4aa;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 24px 55px rgba(0,0,0,0.38);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #0b1020 0%, #10172b 100%);
-      color: var(--text);
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { opacity: 0.9; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(245,200,66,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(0,212,170,.10), transparent 30%),
+        linear-gradient(180deg, #060b13, #0b1220);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
+      width: min(1120px, 92%);
+      margin: auto;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,0.7);
+      z-index: 100;
+      background: rgba(6,11,19,.86);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav {
+      min-height: 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      color: var(--gold);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -57,168 +81,210 @@
       gap: 18px;
       flex-wrap: wrap;
       font-size: 14px;
+      color: var(--muted);
     }
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.3px;
+    .nav-links a:hover {
+      color: var(--teal);
     }
 
     .hero {
-      padding: 72px 0 44px;
+      padding: 80px 0 35px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 360px;
       gap: 28px;
-      align-items: stretch;
+      align-items: start;
     }
 
-    .featured-gallery {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 220px 220px;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .featured-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      display: block;
-    }
-
-    .featured-gallery img.main-photo {
-      grid-row: 1 / span 2;
-      grid-column: 1;
-      min-height: 452px;
-    }
-
-    .hero-card, .side-card, .section-card {
+    .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 26px;
+      padding: 34px;
       box-shadow: var(--shadow);
     }
 
     .hero-card {
-      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--teal));
     }
 
     .eyebrow {
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
+      color: var(--teal);
+      font-size: 13px;
       font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      margin: 14px 0 12px;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     .subtitle {
-      font-size: 20px;
-      color: var(--muted);
-      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
     .summary {
       color: var(--muted);
-      max-width: 62ch;
+      max-width: 760px;
+      font-size: 15.5px;
     }
 
-    .cta-row {
+    .btn-row {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #0b1020;
-      border-color: transparent;
-    }
-
-    .side-card {
-      padding: 28px;
-    }
-
-    .contact-list, .lang-list, .skill-list {
-      display: grid;
       gap: 12px;
-      padding: 0;
-      margin: 16px 0 0;
-      list-style: none;
-    }
-
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .photo-strip img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      display: block;
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .pill {
-      padding: 10px 14px;
-      background: var(--soft);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    main {
-      padding: 10px 0 72px;
-    }
-
-    .section {
       margin-top: 26px;
     }
 
-    .section-card {
-      padding: 30px;
+    .btn {
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--card-2);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #061018;
+      border: none;
+    }
+
+    .profile-box {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(245,200,66,.12), rgba(0,212,170,.10)),
+        rgba(255,255,255,.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-note {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: -8px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+    }
+
+    .label {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+
+    .value {
+      font-size: 14px;
+      font-weight: 600;
+      overflow-wrap: break-word;
+    }
+
+    .stats {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .stat h2 {
+      color: var(--gold);
+      font-family: "Syne", sans-serif;
+      font-size: 30px;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      padding: 20px 0 80px;
+    }
+
+    section {
+      margin-top: 28px;
+      scroll-margin-top: 95px;
     }
 
     .section-title {
+      font-family: "Syne", sans-serif;
       font-size: 28px;
-      margin: 0 0 16px;
+      margin-bottom: 18px;
     }
 
     .section-intro {
       color: var(--muted);
-      margin: 0 0 20px;
+      margin-bottom: 20px;
+      max-width: 850px;
     }
 
     .two-col {
@@ -229,275 +295,534 @@
 
     .timeline {
       display: grid;
-      gap: 16px;
+      gap: 15px;
     }
 
     .item {
-      padding: 18px;
-      border: 1px solid var(--border);
+      padding: 20px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
     }
 
     .item h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
+      font-family: "Syne", sans-serif;
+      font-size: 17px;
+      margin-bottom: 6px;
     }
 
     .meta {
-      color: var(--accent-2);
-      font-size: 14px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .muted { color: var(--muted); }
-
-    footer {
-      padding: 24px 0 48px;
+    .item p {
       color: var(--muted);
-      text-align: center;
+      font-size: 14.5px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid, .two-col {
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(0,212,170,.10);
+      border: 1px solid rgba(0,212,170,.20);
+      color: var(--text);
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .pill.gold {
+      background: rgba(245,200,66,.10);
+      border-color: rgba(245,200,66,.25);
+      color: var(--gold);
+    }
+
+    .achievement {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(245,200,66,.12);
+      border: 1px solid rgba(245,200,66,.25);
+      flex-shrink: 0;
+      font-size: 22px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 210px 210px;
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+    }
+
+    .gallery .main-photo {
+      grid-row: 1 / span 2;
+    }
+
+    .ref-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid {
         grid-template-columns: 1fr;
       }
 
-      .featured-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 220px 220px 220px;
+      .profile-box {
+        max-width: 420px;
+        margin: auto;
+        width: 100%;
       }
+    }
 
-      .featured-gallery img.main-photo {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        min-height: 220px;
-      }
-
-      .photo-strip {
+    @media (max-width: 950px) {
+      .two-col,
+      .ref-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-card, .side-card, .section-card {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .card {
         padding: 24px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .gallery img {
+        height: 230px;
+      }
+
+      .gallery .main-photo {
+        grid-row: auto;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Rohan Sheikh</div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<header>
+  <div class="container nav">
+    <div class="brand">Rohan Sheikh</div>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#references">References</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero container">
+  <div class="hero-grid">
+
+    <aside class="card profile-box">
+      <div class="profile-photo">
+        <img src="profile.jpg" alt="SHIEAK ROHAN MONDOL LIKHON">
+      </div>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="label">Phone</span>
+          <span class="value"><a href="tel:+8801615136139">+88 01615136139</a></span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:sheikhlikhon07@gmail.com">sheikhlikhon07@gmail.com</a></span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">LinkedIn</span>
+          <span class="value"><a href="https://www.linkedin.com/in/rohan-sheikh23" target="_blank">rohan-sheikh23</a></span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Address</span>
+          <span class="value">107/6, Madina Market, Akhalia, Sylhet</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="card hero-card">
+      <p class="eyebrow">IPE’27, SUST | Leadership-Driven Organizing Expert | Student Entrepreneur | Data Science & AI Enthusiast</p>
+
+      <h1>SHIEAK ROHAN MONDOL LIKHON</h1>
+
+      <p class="subtitle">
+        INDUSTRIAL & PRODUCTION ENGINEERING Student at SUST
+      </p>
+
+      <p class="summary">
+        I am an undergraduate student in Industrial and Production Engineering with strong interest in
+        operations management, supply chain optimization, process improvement, data science, AI, and innovation.
+        Alongside my academic journey, I actively work in leadership, event management, professional networking,
+        personal branding, and student entrepreneurship.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mailto:sheikhlikhon07@gmail.com">Email Me</a>
+        <a class="btn" href="tel:+8801615136139">Call Me</a>
+        <a class="btn" href="https://www.linkedin.com/in/rohan-sheikh23" target="_blank">LinkedIn</a>
+      </div>
     </div>
-  </header>
 
-  <section class="hero container">
-    <div class="hero-grid">
-      <div class="hero-card">
-        <div class="eyebrow">Aspiring Engineer · MUN Enthusiast · Organizer · Event Promoter</div>
-        <h1>Sheikh Rohan Mondol</h1>
-        <p class="subtitle">Industrial and Production Engineering Student at Shahjalal University of Science and Technology</p>
-        <p class="summary">
-          I am passionate about leadership, branding, promotion, and problem-solving. Alongside my engineering studies,
-          I actively work on communication, networking, and event management through Model United Nations, student organizations,
-          and campus initiatives. I am especially interested in innovation and supply chain management, and I enjoy building
-          strong communities through collaboration and effective communication.
-        </p>
-        <div class="featured-gallery">
-          <img class="main-photo" src="photo1.jpg" alt="Featured photo of Sheikh Rohan Mondol">
-          <img src="photo2.jpg" alt="Conference photo 2">
-          <img src="photo3.jpg" alt="Conference photo 3">
-          <img src="photo4.jpg" alt="Conference photo 4">
-          <img src="photo5.jpg" alt="Conference photo 5">
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:sheikhlikhon07@gmail.com">Email Me</a>
-          <a class="btn" href="#contact">View Contact</a>
-        </div>
-      </div>
+  </div>
 
-      <aside class="side-card">
-        <h2 style="margin-top:0;">Quick Profile</h2>
-        <ul class="contact-list">
-          <li><strong>Phone:</strong> <a href="tel:+8801615136139">+8801615136139</a></li>
-          <li><strong>Email:</strong> <a href="mailto:sheikhlikhon07@gmail.com">sheikhlikhon07@gmail.com</a></li>
-          <li><strong>Location:</strong> Madina Market, Sylhet</li>
-        </ul>
-
-        <h3 style="margin:24px 0 8px;">Languages</h3>
-        <ul class="lang-list">
-          <li>English</li>
-          <li>Bangla</li>
-        </ul>
-
-        <h3 style="margin:24px 0 8px;">Core Skills</h3>
-        <div class="skill-pills">
-          <span class="pill">Public Speaking</span>
-          <span class="pill">Content Writing</span>
-          <span class="pill">Branding & Promotion</span>
-          <span class="pill">Canva</span>
-          <span class="pill">MS Word</span>
-          <span class="pill">MS PowerPoint</span>
-          <span class="pill">MS Excel</span>
-          <span class="pill">AutoCAD</span>
-        </div>
-      </aside>
+  <div class="stats">
+    <div class="stat">
+      <h2>20+</h2>
+      <p>Events Organized</p>
     </div>
-  </section>
 
-  <main class="container">
-    <section id="about" class="section">
-      <div class="section-card">
-        <h2 class="section-title">Photo Highlights</h2>
-        <p class="section-intro">A visual snapshot of my journey in conferences, leadership, networking, and event promotion.</p>
-        <div class="photo-strip">
-          <img src="photo6.jpg" alt="Photo highlight 6">
-          <img src="photo7.jpg" alt="Photo highlight 7">
-          <img src="photo8.jpg" alt="Photo highlight 8">
+    <div class="stat">
+      <h2>10+</h2>
+      <p>Leadership Roles</p>
+    </div>
+
+    <div class="stat">
+      <h2>550+</h2>
+      <p>Delegates Engaged</p>
+    </div>
+
+    <div class="stat">
+      <h2>7+</h2>
+      <p>MUN Awards & Recognitions</p>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<section id="about">
+  <div class="card">
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-intro">
+      I combine engineering knowledge with leadership, communication, branding, and organizational experience.
+      My journey includes MUN conferences, campus-level campaigns, corporate collaboration, innovation competitions,
+      and student-led event management.
+    </p>
+
+    <p class="section-intro">
+      I am especially interested in operations, supply chain, process improvement, product development,
+      data-driven decision making, and building impactful professional networks.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="card">
+    <h2 class="section-title">Work & Leadership Experience</h2>
+
+    <div class="timeline">
+
+      <div class="item">
+        <h3>Campus Coordinator — YOUNET</h3>
+        <div class="meta">January 2026 – Present</div>
+        <p>Enhanced communication and stakeholder engagement skills through collaboration with professionals, experts, and youth-focused communities.</p>
+      </div>
+
+      <div class="item">
+        <h3>Organizing Secretary — SUST Model United Nations Association</h3>
+        <div class="meta">June 2024 – Present</div>
+        <p>Organized 20+ events, workshops, international MUN activities, weekly sessions, and corporate collaborations while developing leadership and communication skills.</p>
+      </div>
+
+      <div class="item">
+        <h3>Marketing Officer — Flexomart</h3>
+        <div class="meta">April 2024 – January 2026</div>
+        <p>Worked on brand visibility, peer engagement, promotional planning, customer communication, and campus-level activations.</p>
+      </div>
+
+      <div class="item">
+        <h3>Director of Branding & Promotion — SylMUN 2025</h3>
+        <div class="meta">June 2024 – Present</div>
+        <p>Contributed to a conference involving around 460 delegates from Bangladesh, Bhutan, Nepal, IUT, and HSTU. Maintained communication with MUN clubs from 20+ universities.</p>
+      </div>
+
+      <div class="item">
+        <h3>Campus Envoy — DUNMUN 2025</h3>
+        <div class="meta">June 2025 – July 2025</div>
+        <p>Guided and encouraged students to participate in one of the largest MUN conferences in Bangladesh.</p>
+      </div>
+
+      <div class="item">
+        <h3>Publication Secretary — SUST IPE Association</h3>
+        <div class="meta">December 2023 – August 2025</div>
+        <p>Contributed to publication, communication, departmental branding, event documentation, and association activities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="two-col">
+  <div id="education" class="card">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+
+      <div class="item">
+        <h3>B.Sc. Engineering in Industrial & Production Engineering</h3>
+        <div class="meta">February 2023 – Present</div>
+        <p>Shahjalal University of Science and Technology</p>
+      </div>
+
+      <div class="item">
+        <h3>Higher Secondary Certificate in Science</h3>
+        <div class="meta">June 2019 – December 2021</div>
+        <p>Cantonment Public School and College, Saidpur<br>
+        <strong style="color:var(--gold);">GPA: 5.00 / 5.00</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="skills" class="card">
+    <h2 class="section-title">Professional Skills</h2>
+
+    <p class="section-intro">Interpersonal Skills</p>
+
+    <div class="skills">
+      <span class="pill">Leadership</span>
+      <span class="pill">Teamwork</span>
+      <span class="pill">Public Speaking</span>
+      <span class="pill">Problem Solving</span>
+      <span class="pill">Event Hosting</span>
+      <span class="pill">Communication</span>
+      <span class="pill">Networking</span>
+      <span class="pill">Promotion Strategy</span>
+    </div>
+
+    <br>
+
+    <p class="section-intro">Software & Technical Skills</p>
+
+    <div class="skills">
+      <span class="pill gold">Microsoft Word</span>
+      <span class="pill gold">Microsoft Excel</span>
+      <span class="pill gold">PowerPoint</span>
+      <span class="pill gold">Python</span>
+      <span class="pill gold">AutoCAD</span>
+      <span class="pill gold">MATLAB</span>
+      <span class="pill gold">Canva</span>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="card">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="timeline">
+
+      <div class="item achievement">
+        <div class="badge">🌟</div>
+        <div>
+          <h3>Outstanding Delegate Award — MUNMUN 2026</h3>
+          <p>Recognized for strong diplomatic performance, negotiation, and public speaking.</p>
         </div>
       </div>
-    </section>
 
-    <section id="about" class="section">
-      <div class="section-card">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-intro">
-          I am a student of Industrial and Production Engineering at Shahjalal University of Science and Technology.
-          My journey combines engineering studies with leadership, branding, promotion, and event coordination. I have taken
-          active roles in campus and national-level initiatives, especially in Model United Nations platforms and student organizations.
-          Through these experiences, I have developed strong communication, organizational, and networking skills while continuing to grow
-          as a future professional.
+      <div class="item achievement">
+        <div class="badge">🏅</div>
+        <div>
+          <h3>Special Mention Award — LUIMUN 2026</h3>
+          <p>Awarded Special Mention for outstanding diplomatic engagement, negotiation, and committee performance at Leading University Model United Nations 2026.</p>
+        </div>
+      </div>
+
+      <div class="item achievement">
+        <div class="badge">🏅</div>
+        <div>
+          <h3>Special Mention Award — CUMUN 2025</h3>
+          <p>Awarded for effective committee performance and diplomatic communication.</p>
+        </div>
+      </div>
+
+      <div class="item achievement">
+        <div class="badge">🎖️</div>
+        <div>
+          <h3>Verbal Mention — LUIMUN 2024</h3>
+          <p>Recognized with a Verbal Mention for active participation, public speaking, diplomacy, and constructive contributions during committee sessions.</p>
+        </div>
+      </div>
+
+      <div class="item achievement">
+        <div class="badge">🥇</div>
+        <div>
+          <h3>Champion — CaseQuest 2.0</h3>
+          <p>Won the case competition organized by IPE Association, SUST.</p>
+        </div>
+      </div>
+
+      <div class="item achievement">
+        <div class="badge">🚀</div>
+        <div>
+          <h3>Selected — Needle Innovation Challenge 3.0 Residential Bootcamp</h3>
+          <p>Selected among the Top 11 teams from 2,037 innovators nationwide.</p>
+        </div>
+      </div>
+
+      <div class="item achievement">
+        <div class="badge">🎖</div>
+        <div>
+          <h3>Finalist — Case Quest 1.0</h3>
+          <p>Reached the finalist stage through analytical thinking and teamwork.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="card">
+    <h2 class="section-title">Photo Highlights</h2>
+    <p class="section-intro">A visual snapshot of conferences, leadership, networking, and event promotion.</p>
+
+    <div class="gallery">
+      <img class="main-photo" src="photo1.jpg" alt="Featured Photo">
+      <img src="photo2.jpg" alt="Photo 2">
+      <img src="photo3.jpg" alt="Photo 3">
+      <img src="photo4.jpg" alt="Photo 4">
+      <img src="photo5.jpg" alt="Photo 5">
+    </div>
+  </div>
+</section>
+
+<section id="references">
+  <div class="card">
+    <h2 class="section-title">References</h2>
+
+    <div class="ref-grid">
+
+      <div class="item">
+        <h3>Dr. Engineer Mohammad Iqbal</h3>
+        <div class="meta">VC, DUET · Professor, IPE, SUST</div>
+        <p>
+          Phone: <a href="tel:+8801716312955">+88 01716312955</a><br>
+          Email: <a href="mailto:iqbal-ipe@sust.edu">iqbal-ipe@sust.edu</a>
         </p>
       </div>
-    </section>
 
-    <section id="experience" class="section">
-      <div class="section-card">
-        <h2 class="section-title">Work & Leadership Experience</h2>
-        <div class="timeline">
-          <div class="item">
-            <h3>Organizing Secretary — SUST Model UN Nations Association</h3>
-            <p class="muted">Every Thursday, we hold sessions on regional and global issues, conduct workshops for school and college students, participate in MUN conferences at various universities, and host our own conference as a team.</p>
-          </div>
-          <div class="item">
-            <h3>Campus Envoy — DUNMUN 2025</h3>
-            <p class="muted">Represented campus outreach efforts for one of Bangladesh’s major MUN conferences and strengthened engagement with students and delegates.</p>
-          </div>
-          <div class="item">
-            <h3>Campus Ambassador — GSTU Global Affairs Council 2025</h3>
-            <p class="muted">Supported promotion, communication, and student outreach activities to expand participation and visibility.</p>
-          </div>
-          <div class="item">
-            <h3>Director of Branding & Promotion — SylMUN 2025</h3>
-            <p class="muted">Contributed to a conference involving around 460 delegates from Bangladesh, Bhutan, Nepal, and international students from IUT and HSTU. Maintained communication with MUN clubs from 20+ universities and coordinated delegate participation at our university.</p>
-          </div>
-          <div class="item">
-            <h3>Key Leader from SUST — Dhaka University Model UN Conference</h3>
-            <p class="muted">Played a major leadership role representing SUST at one of the biggest MUN conferences in Bangladesh.</p>
-          </div>
-          <div class="item">
-            <h3>Head of Delegation — RUMUNA Conference 2025</h3>
-            <p class="muted">Led the delegation and represented the institution with responsibility and coordination.</p>
-          </div>
-          <div class="item">
-            <h3>Publication Secretary — SUST IPE Association</h3>
-            <p class="muted">Worked on communication and publication activities supporting the department’s student association.</p>
-          </div>
-          <div class="item">
-            <h3>Media Crew, Branding & Promotion Team — SUST IPE Reunion 2025</h3>
-            <p class="muted">Directly involved in designing banners, sending invitations, and contributing to magazines and videography for programs and events.</p>
-          </div>
-          <div class="item">
-            <h3>Publication Secretary — Panchagarh Student Association, SUST</h3>
-            <p class="muted">Supported publishing and communication responsibilities for the student association.</p>
-          </div>
-          <div class="item">
-            <h3>Former Campus Ambassador — IshQool</h3>
-            <div class="meta">November 2023 – December 2025</div>
-            <p class="muted">Worked with an EdTech platform focused on reducing educational discrimination through student engagement and outreach.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section two-col">
-      <div id="education" class="section-card">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-          <div class="item">
-            <h3>Bachelor of Science in Industrial and Production Engineering</h3>
-            <div class="meta">2023 – Present</div>
-            <p class="muted">Shahjalal University of Science and Technology</p>
-          </div>
-          <div class="item">
-            <h3>Higher Secondary School Certificate</h3>
-            <div class="meta">2019 – 2021</div>
-            <p class="muted">Saidpur Cantonment Public School and College</p>
-          </div>
-        </div>
+      <div class="item">
+        <h3>Tanjidul Islam</h3>
+        <div class="meta">Procurement Executive, American &amp; Efird LLC</div>
+        <p>
+          Former Ignite Campus Ambassador, SUST<br>
+          Phone: <a href="tel:+8801729245866">+88 01729245866</a>
+        </p>
       </div>
 
-      <div class="section-card">
-        <h2 class="section-title">Professional Skills</h2>
-        <div class="skill-pills">
-          <span class="pill">Leadership</span>
-          <span class="pill">Communication</span>
-          <span class="pill">Networking</span>
-          <span class="pill">Event Management</span>
-          <span class="pill">Promotion Strategy</span>
-          <span class="pill">Public Relations</span>
-          <span class="pill">Problem Solving</span>
-          <span class="pill">Team Coordination</span>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="achievements" class="section">
-      <div class="section-card">
-        <h2 class="section-title">Achievements</h2>
-        <div class="timeline">
-          <div class="item">
-            <h3>Outstanding Delegate Award — MUNMUN 2025</h3>
-            <p class="muted">Represented the United Kingdom among 330 delegates from across Bangladesh and received the Outstanding Delegate award at the national conference.</p>
-          </div>
-          <div class="item">
-            <h3>Special Mention Award — CUMUN 2025</h3>
-            <p class="muted">Represented BNP in the Committee of Interim Government among 550+ delegates nationwide and received the Special Mention – 1 award.</p>
-          </div>
-          <div class="item">
-            <h3>Finalist — Case Quest 1.0</h3>
-            <p class="muted">Reached the finalist stage in a case competition, demonstrating analytical thinking and teamwork.</p>
-          </div>
-          <div class="item">
-            <h3>Verbal Mention — LUIMUN 2024</h3>
-            <p class="muted">Recognized for performance and participation in committee sessions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="contact">
+  <div class="card">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-intro">Open to academic, organizational, promotional, and collaborative opportunities.</p>
 
-    <section id="contact" class="section">
-      <div class="section-card">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-intro">Feel free to reach out for academic, organizational, promotional, or collaborative opportunities.</p>
-        <div class="timeline">
-          <div class="item"><strong>Phone:</strong> <a href="tel:+8801615136139">+8801615136139</a></div>
-          <div class="item"><strong>Email:</strong> <a href="mailto:sheikhlikhon07@gmail.com">sheikhlikhon07@gmail.com</a></div>
-          <div class="item"><strong>Location:</strong> Madina Market, Sylhet, Bangladesh</div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <div class="contact-grid">
 
-  <footer>
-    <div class="container">© 2026 Sheikh Rohan Mondol. All rights reserved.</div>
-  </footer>
+      <div class="item">
+        <h3>Phone</h3>
+        <p><a href="tel:+8801615136139">+88 01615136139</a></p>
+      </div>
+
+      <div class="item">
+        <h3>Email</h3>
+        <p><a href="mailto:sheikhlikhon07@gmail.com">sheikhlikhon07@gmail.com</a></p>
+      </div>
+
+      <div class="item">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/rohan-sheikh23" target="_blank">linkedin.com/in/rohan-sheikh23</a></p>
+      </div>
+
+      <div class="item">
+        <h3>Address</h3>
+        <p>107/6, Madina Market, Akhalia, Sylhet</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 <span>SHIEAK ROHAN MONDOL LIKHON</span>. All rights reserved.
+</footer>
+
 </body>
 </html>
+```
